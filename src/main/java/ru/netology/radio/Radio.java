@@ -9,48 +9,6 @@ public class Radio {
     private int minVolume = 0;
     private int currentVolume = minVolume;
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < minVolume) {
-            return;
-        }
-        if (newCurrentVolume > maxVolume) {
-            return;
-        }
-        currentVolume = newCurrentVolume;
-    }
-
-    public void setToMaxRadioStation() {
-        currentRadioStation = maxRadioStation;
-    }
-
-    public void setToMinRadioStation() {
-        currentRadioStation = minRadioStation;
-    }
-
-    public void setToMaxVolume() {
-        currentVolume = maxVolume;
-    }
-
-    public void setToMinVolume() {
-        currentVolume = minVolume;
-    }
-
-    public void increaseVolume() {
-        if (currentVolume < maxVolume) {
-            setCurrentVolume(currentVolume + 1);
-        } else {
-            setToMaxVolume();
-        }
-    }
-
-    public void decreaseVolume() {
-        if (currentVolume > minVolume) {
-            setCurrentVolume(currentVolume - 1);
-        } else {
-            setToMinVolume();
-        }
-    }
-
     public Radio() {
         this.maxRadioStation = maxRadioStation;
     }
@@ -93,6 +51,31 @@ public class Radio {
         currentRadioStation = newCurrentRadioStation;
     }
 
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < minVolume) {
+            return;
+        }
+        if (newCurrentVolume > maxVolume) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+    }
+
+    public void setToMaxRadioStation() {
+        currentRadioStation = maxRadioStation;
+    }
+
+    public void setToMinRadioStation() {
+        currentRadioStation = minRadioStation;
+    }
+
+    public void setToMaxVolume() {
+        currentVolume = maxVolume;
+    }
+
+    public void setToMinVolume() {
+        currentVolume = minVolume;
+    }
 
     public void nextRadioStation() {
         if (currentRadioStation < maxRadioStation) {
@@ -110,5 +93,19 @@ public class Radio {
         }
     }
 
+    public void increaseVolume() {
+        if (currentVolume < maxVolume) {
+            setCurrentVolume(currentVolume + 1);
+        } else {
+            setToMaxVolume();
+        }
+    }
 
+    public void decreaseVolume() {
+        if (currentVolume > minVolume) {
+            setCurrentVolume(currentVolume - 1);
+        } else {
+            setToMinVolume();
+        }
+    }
 }
